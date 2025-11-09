@@ -3,13 +3,14 @@ import cors from "cors";
 import { getRandomQuote } from "./quotes.js";
 const app = express();
 const Port = 3000;
+
 app.use(cors());
 app.get("/", (req, res) => {
   res.send("Welcome to the Quotes API!");
 });
 
 
-app.get("/quote", (req, res) => {
+app.get("/api/quote", (req, res) => {
   const quote = getRandomQuote();
   res.json(quote);
 });
